@@ -1,0 +1,206 @@
+.topbar {
+	background: #152559;
+}
+.topbar .title {
+	font-family: 'Oswald', sans-serif;
+}
+.topbar .title a {
+	text-decoration: none;
+	color: inherit;
+	display: inline-block;
+	padding: 4px 32px;
+	font-size: 24px;
+	line-height: 24px;
+	text-transform: uppercase;
+}
+.topbar .title a:hover {
+	background: #061649;
+}
+.topbar .right a.btn {
+	padding: 8px 16px;
+	font-size: 16px;
+	line-height: 16px;
+}
+.projectbar {
+	background: #ffffff;
+	color: #000000;
+	box-shadow: 0 1px 3px #000000;
+	padding: 0 16px;
+	display: flex;
+	justify-content: space-between;
+}
+.projectbar .title {
+	font-family: 'Oswald', sans-serif;
+	padding: 4px 16px;
+	font-size: 24px;
+	line-height: 24px;
+}
+.projectbar .tabs {
+	padding-top: 3px;
+}
+.projectbar .tab {
+	margin-right: 16px;
+	font-size: 12px;
+	line-height: 17px;
+	padding-bottom: 6px;
+	cursor: pointer;
+}
+.projectbar .tab:hover {
+	box-shadow: inset 0 -3px #bbbbbb;
+}
+.projectbar .tab:last-child {
+	margin-right: 0;
+}
+.projectbar .tab.selected {
+	box-shadow: inset 0 -3px #601ef2;
+}
+.tab-area {
+	position: absolute;
+	width: 100%;
+	height: calc(100% - 90px);
+}
+.tab-area .board-box,
+.tab-area .convo-box,
+.tab-area .activ-box {
+	position: relative;
+	top: 0;
+	height: calc(100% - 32px);
+	width: calc(100% - 64px);
+	display: none;
+	padding: 16px 32px;
+}
+.tab-area .board-box.active,
+.tab-area .convo-box.active,
+.tab-area .activ-box.active {
+	display: flex;
+}
+.tab-area .board-box {
+	flex-direction: row;
+	white-space: nowrap;
+	overflow-x: scroll;
+}
+.tab-area .convo-box,
+.tab-area .activ-box {
+	flex-direction: column;
+	overflow-y: auto;
+}
+.board-box .board {
+	background: #152559;
+	padding: 8px;
+	margin-right: 16px;
+	white-space: nowrap;
+	display: flex;
+	flex: 0 0 280px;
+	flex-direction: column;
+	min-height: 280px;
+	max-width: 280px;
+}
+.board-box .board.new {
+	background: rgba(0, 0, 0, 0.25);
+	justify-content: center;
+	cursor: pointer;
+}
+.board-box .board.new .ico {
+	font-weight: bold;
+	font-size: 32px;
+}
+.board-box .board .name {
+	margin: -8px -8px 8px;
+	padding: 8px;
+	display: table-cell;
+	text-align: center;
+	font-weight: bold;
+	background: rgba(256, 256, 256, 0.15);
+}
+.board-box .board .newcard {
+	background: #dddddd;
+	color: #666666;
+	font-size: 24px;
+	text-align: center;
+	cursor: pointer;
+	margin-bottom: 8px;
+}
+.board-box .board .cards {
+	display: flex;
+	flex: 1;
+	flex-direction: column;
+	margin-right: -8px;
+	overflow-y: auto;
+}
+.board-box .board .cards .card {
+	background: #ffffff;
+	color: #000000;
+	margin-right: 8px;
+	margin-bottom: 10px;
+	box-shadow: 2px 2px 0 #999999;
+}
+.board-box .board .cards .card .title {
+	padding: 4px 8px;
+	border-bottom: 1px solid #dddddd;
+	font-size: 14px;
+	font-weight: bold;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+.board-box .board .cards .card .title a {
+	text-decoration: none;
+	color: #601ef2;
+}
+.board-box .board .cards .card .body {
+	padding: 4px 8px;
+	border-bottom: 1px solid #dddddd;
+	font-size: 12px;
+	max-height: 64px;
+	overflow: hidden;
+}
+.board-box .board .cards .card .foot {
+	padding: 4px 8px;
+}
+.convo-box .new-post {
+	display: flex;
+	flex-direction: row;
+	background: #ffffff;
+	padding: 8px;
+	color: #000000;
+}
+.convo-box .new-post .type {
+	display: flex;
+	flex: 1 1 auto;
+	padding: 16px;
+	margin-right: 8px;
+	justify-content: center;
+}
+.convo-box .new-post .type:last-child {
+	margin-right: 0;
+}
+
+.convo-box .new-post .type:hover {
+	background: rgba(0, 0, 0, 0.05);
+}
+.activ-box .activity {
+	font-size: 12px;
+	margin: 0 -32px;
+	border-bottom: 1px solid #dddddd;
+	padding: 8px 16px;
+}
+.activ-box .activity:first-child {
+	margin: -24px -32px 0;
+	border-top: 1px solid #dddddd;
+}
+.activ-box .activity:last-child {
+	margin: 0 -32px -24px;
+}
+.activ-box .activity .time {
+	font-family: monospace;
+	color: #777777;
+	margin-right: 16px;
+}
+.activ-box .activity a {
+	text-decoration: none;
+	color: #7645f6;
+	font-weight: bold;
+}
+.activ-box .activity a:hover {
+	color: #601ef2;
+}

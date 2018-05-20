@@ -1,0 +1,242 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans|Oswald');
+body {
+	padding: 0;
+	margin: 0;
+	font-family: 'Open Sans', sans-serif;
+	background: #061649;
+	color: #ffffff;
+}
+h1, h2, h3, h4, h5, h6 {
+	font-family: 'Oswald', sans-serif;
+}
+label {
+	display: block;
+	font-size: 10px;
+	font-family: 'Oswald', sans-serif;
+	text-transform: uppercase;
+}
+label span.right {
+	font-family: 'Open Sans', sans-serif;
+	color: #666666;
+	font-size: 8px;
+}
+input[type="text"], input[type="email"], input[type="password"], select, textarea {
+	width: 100%;
+	margin: 0;
+	padding: 4px 0;
+	border: none;
+	border-bottom: 2px solid #152559;
+	margin-bottom: 8px;
+	background: transparent;
+	font-family: 'Open Sans', sans-serif;
+}
+input[type="text"]:disabled, input[type="email"]:disabled, input[type="password"]:disabled, select:disabled, textarea:disabled {
+	border-bottom: 2px solid #bbbbbb;
+}
+textarea {
+	resize: vertical;
+	max-height: 96px;
+}
+
+.left {
+	float: left;
+}
+.right {
+	float: right;
+}
+.clear {
+	clear: both;
+}
+.text-left {
+	text-align: left;
+}
+.text-right {
+	text-align: right;
+}
+.text-center {
+	text-align: center;
+}
+.relative {
+	position: relative;
+}
+.pad {
+	padding: 32px;
+}
+.bg-white {
+	background-color: #ffffff;
+	color: #000000;
+}
+.head {
+	padding: 16px 0;
+}
+a.btn, .btn {
+	background: linear-gradient(to right, #601ef2, #7645f6), #601ef2;
+	border: 0;
+	color: #ffffff;
+	padding: 8px 16px;
+	cursor: pointer;
+	text-decoration: none;
+	display: inline-block;
+}
+a.btn:hover, .btn:hover {
+	background: linear-gradient(to right, #7645f6, #601ef2), #7645f6;
+}
+.container {
+	width: 920px;
+	margin: 0 auto;
+}
+
+/* Custome UI Template */
+.error {
+	background-color: #491606;
+	padding: 16px 32px;
+	margin-bottom: 32px;
+	color: #ffffff;
+	font-size: 12px;
+}
+.model {
+	display: none;
+	position: absolute;
+	width: 100%;
+	height: calc(100% - 64px);
+	background: rgba(0, 0, 0, 0.65);
+	top: 0;
+	padding: 32px 0;
+	color: #000000;
+	z-index: 200;
+}
+.model .close {
+	position: absolute;
+	height: 32px;
+	width: 32px;
+	top: 0;
+	right: 0;
+	background: #491606;
+	cursor: pointer;
+}
+.model .close:hover {
+	background: #592515;
+}
+.model .box {
+	position: relative;
+	background: #ffffff;
+	padding: 16px 32px;
+	width: 480px;
+	margin: 0 auto;
+	box-shadow: 0 0 16px #000000;
+}
+.model .box .head {
+	font-family: 'Oswald', sans-serif;
+	font-size: 20px;
+	line-height: 20px;
+	padding: 16px 0;
+	text-transform: uppercase;
+}
+.popup {
+	position: absolute;
+	background: #ffffff;
+	padding: 4px 0;
+	box-shadow: 0 0 4px #000000;
+	color: #000000;
+	display: none;
+}
+ul.menu-v, ul.menu-h {
+	margin: 0;
+	padding: 0;
+}
+ul.menu-h li {
+	list-style: none;
+	display: inline-block;
+}
+ul.menu-v li {
+	list-style: none;
+	display: block;
+}
+ul.menu-v li a {
+	display: block;
+	text-decoration: none;
+	color: inherit;
+	padding: 4px 16px;
+	font-size: 14px;
+	min-width: 42px;
+}
+ul.menu-h li a {
+	display: block;
+	text-decoration: none;
+	color: inherit;
+	padding: 4px 16px;
+	font-size: 14px;
+	min-width: 36px;
+}
+ul.menu-v li a:hover {
+	background: #f5f5f5;
+}
+ul.menu-h li a:hover {
+	background: #;
+}
+ul.menu-v li a.bg-red {
+	background: #592515;
+	color: #ffffff;
+}
+ul.menu-v li.seprator {
+	border: 1px solid #dddddd;
+	margin: 4px 0;
+}
+.notification {
+	position: fixed;
+	bottom: 32px;
+	right: 32px;
+	padding: 8px 16px;
+	margin: 0;
+	background: #ffffff;
+}
+.notification.error {
+	background: #491606;
+}
+.tile {
+	background: #ffffff;
+	padding: 8px 16px;
+	margin: 8px;
+	color: #000000;
+	font-family: 'Open Sans', sans-serif !important;
+	box-shadow: 4px 4px 0 #666666;
+	width: calc(33.33% - 48px);
+}
+.tile .head {
+	margin: 0 -16px;
+	padding: 0 16px 8px !important;
+	border-bottom: 1px solid #dddddd;
+	font-size: 16px !important;
+}
+.tile .body {
+	margin: 0 -16px;
+	padding: 8px 16px;
+	border-bottom: 1px solid #dddddd;
+	font-size: 14px;
+}
+.tile .foot {
+	margin: 0 -16px;
+	padding: 8px 16px 0;
+	font-size: 12px;
+}
+.flex-left {
+	align-items: flex-end;
+	display: flex;
+}
+.flex-center {
+	align-items: center;
+	display: flex;
+	flex: 1 1 auto;
+	flex-direction: column;
+	justify-content: space-between;
+	min-width: 1px;
+}
+.flex-right {
+	align-items: flex-end;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+.flex-row {
+	display: flex;
+}
