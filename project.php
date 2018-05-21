@@ -31,6 +31,7 @@ if($res = $con->query($sql)) {
 <html>
 <head>
 	<title>ProMan - Project : "<?= $proData['name']; ?>"</title>
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css">
 	<link rel="stylesheet" type="text/css" href="css/main.css">
 	<link rel="stylesheet" type="text/css" href="css/project.css">
 	<script src="js/jquery.min.js"></script>
@@ -50,7 +51,7 @@ if($res = $con->query($sql)) {
 		<div class="right">
 			<ul class="menu-h">
 				<li>
-					<a class="btn" id="call-setting" href="#setting.php"><?= $data['fullname']; ?> &#9660;</a>
+					<a class="btn" id="call-setting" href="#setting.php"><?= $data['fullname']; ?> <i class="fas fa-caret-down"></i></a>
 					<div id="popup-setting" class="popup" style="z-index: 100;">
 						<ul class="menu-v">
 							<li><a href="#">Profile</a></li>
@@ -74,7 +75,13 @@ if($res = $con->query($sql)) {
 				<div id="tab-activ" class="tab">Activity</div>
 			</div>
 		</div>
-		<div class="flex-right"></div>
+		<div class="flex-right">
+			<ul class="menu-h">
+				<li>
+					<i class="fas fa-user-friends"></i>
+				</li>
+			</ul>
+		</div>
 	</div>
 	<div id="tabs-area" class="tab-area">
 		<div id="tab-board" class="board-box active">
@@ -239,6 +246,7 @@ if($res = $con->query($sql)) {
 			<div class="card-detail">
 				<div class="left">
 					<span id="proName"></span>
+					<i class="fas fa-caret-right"></i>
 					<span id="boardName">
 						<select>
 							<?php
@@ -260,8 +268,8 @@ if($res = $con->query($sql)) {
 				<div class="right">
 					<ul class="menu-h">
 
-						<li title="Due Date">&#128197;</li>
-						<li class="red" title="Delete">&#128686;</li>
+						<li title="Due Date"><i class="far fa-calendar-check"></i></li>
+						<li class="red" title="Delete"><i class="far fa-trash-alt"></i></li>
 					<!--
 						<li>&#8285;</li>
 					-->

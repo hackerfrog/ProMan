@@ -100,6 +100,31 @@ $(function() {
 		.always(function() {
 			console.log("complete");
 		});
-		
+
+
+		$("#model-card-box select").on('change', function(event) {
+			event.preventDefault();
+			newBoardId = $("option:selected", this)[0].value;
+			$.ajax({
+				url: 'ajax/changeboard.ajax.php',
+				type: 'POST',
+				data: 'cardId=' + cardId + '&newBoardId=' + newBoardId + '&ajax-changeboard=change'
+			})
+			.done(function(data) {
+				obj = $.parseJSON(data);
+				console.log(obj);
+				if (obj.status == 'error') {
+					alert(obj.message);
+				} else {
+					location.reload();
+				}
+			})
+			.fail(function() {
+				console.log("error");
+			})
+			.always(function() {
+				console.log("complete");
+			});
+		});
 	});
 });

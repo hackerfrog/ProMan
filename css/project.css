@@ -257,16 +257,8 @@
 	display: inline-block;
 	font-family: 'Oswald', sans-serif;
 }
-#model-card-box .box .card-detail #proName::after {
-	height: 0px;
-	width: 0px;
-	content: ' ';
-	border: 8px solid transparent;
-	border-left: 12px solid #601ef2;
-	display: inline-block;
-	font-size: 0px;
-	vertical-align: middle;
-	margin: -4px 0 0 8px;
+#model-card-box .box .card-detail i.fas {
+	margin: 0 4px;
 }
 #model-card-box .box .card-detail .menu-h li {
 	background: linear-gradient(to right, #601ef2, #7645f6), #601ef2;

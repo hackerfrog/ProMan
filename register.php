@@ -63,7 +63,7 @@ if (isset($_POST["register"])) {
 				</h2>
 			</div>
 			<div class="right">
-				<a href="register.php" id="call-register" class="btn">Register</a>
+				<a href="login.php" id="call-register" class="btn">Login</a>
 			</div>
 			<div class="clear"></div>
 		</div>
