@@ -47,6 +47,17 @@ if($data) {
 			<div class="text-center name-explain">&mdash; "Project Manager"</div>
 		</div>
 	</div>
+	<div class="bodybar">
+		<div class="container text-center flex row">
+			<div class="flex">
+				<img style="height:300px;vertical-align:middle;" src="img/proman_shot.png">
+			</div>
+			<div class="flex column center">
+				<div class="head inline-block">Track projects from start to finish</div>
+				Responsiblities and next steps are clear, so you can shoot for the moon, and get there.
+			</div>
+		</div>
+	</div>
 
 
 	<?php footer($config); ?>

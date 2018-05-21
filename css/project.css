@@ -113,12 +113,16 @@
 	background: rgba(256, 256, 256, 0.15);
 }
 .board-box .board .newcard {
-	background: #dddddd;
-	color: #666666;
+	background: linear-gradient(to right, #601ef2, #7645f6), #601ef2;
+	color: #ffffff;
 	font-size: 24px;
 	text-align: center;
 	cursor: pointer;
 	margin-bottom: 8px;
+	font-weight: bold;
+}
+.board-box .board .newcard:hover {
+	background: linear-gradient(to right, #7645f6, #601ef2), #7645f6;
 }
 .board-box .board .cards {
 	display: flex;
@@ -132,7 +136,7 @@
 	color: #000000;
 	margin-right: 8px;
 	margin-bottom: 10px;
-	box-shadow: 2px 2px 0 #999999;
+	box-shadow: 2px 2px 0 #7645f6;
 }
 .board-box .board .cards .card .title {
 	padding: 4px 8px;
@@ -213,14 +217,21 @@
 .activ-box .activity a:hover {
 	color: #601ef2;
 }
+#model-card-box .box .head .title {
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	display: block;
+}
 #model-card-box .box .body {
 	max-height: 320px;
 	overflow-y: auto;
 	margin-right: -32px;
 	padding-right: 32px;
+	min-height: 20px;
 }
 #model-card-box .box .body::before {
-	content: "\2630";
+	content: "\002634";
 	font-size: 20px;
     line-height: 20px;
     position: absolute;
@@ -235,19 +246,48 @@
 	margin-bottom: 16px;
 	border-bottom: 1px solid #dddddd;
 	border-top: 1px solid #dddddd;
+	font-size: 14px;
+	line-height: 24px;
+}
+#model-card-box .box .card-detail select {
+	margin-bottom: 0;
+}
+#model-card-box .box .card-detail #proName,
+#model-card-box .box .card-detail #boardName {
+	display: inline-block;
+	font-family: 'Oswald', sans-serif;
+}
+#model-card-box .box .card-detail #proName::after {
+	height: 0px;
+	width: 0px;
+	content: ' ';
+	border: 8px solid transparent;
+	border-left: 12px solid #601ef2;
+	display: inline-block;
+	font-size: 0px;
+	vertical-align: middle;
+	margin: -4px 0 0 8px;
 }
 #model-card-box .box .card-detail .menu-h li {
-	background: #f5f5f5;
+	background: linear-gradient(to right, #601ef2, #7645f6), #601ef2;
+	color: #ffffff;
 	font-size: 16px;
 	line-height: 16px;
-	width: 16px;
+	min-width: 16px;
 	text-align: center;
 	padding: 4px;
-	border: 1px solid #dddddd;
 	cursor: pointer;
 	margin-left: 4px;
 }
+#model-card-box .box .card-detail .menu-h li.red {
+	background: #491606;
+}
+#model-card-box .box .card-detail .menu-h li.red:hover {
+	background: #592515;
+}
 #model-card-box .box .card-detail .menu-h li:hover {
-	background: #f5f5f5;
-	border: 1px solid #aaaaaa;
+	background: linear-gradient(to right, #7645f6, #601ef2), #7645f6;
+}
+#model-card-box .box .foot .cmts {
+	max-height: 320px;
 }

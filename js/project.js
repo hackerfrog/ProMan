@@ -90,6 +90,8 @@ $(function() {
 				model = $("#model-card-box");
 				model.find('#card-title .title').html(obj.data.title);
 				model.find('#card-body').html(obj.data.body);
+				model.find('#proName').html(obj.project.name);
+				model.find('#boardName select option[value=' + obj.board.id + ']').attr("selected", true);
 			}
 		})
 		.fail(function() {

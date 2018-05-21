@@ -237,16 +237,50 @@ if($res = $con->query($sql)) {
 				<span class="title"></span>
 			</div>
 			<div class="card-detail">
-				<div class="left"></div>
+				<div class="left">
+					<span id="proName"></span>
+					<span id="boardName">
+						<select>
+							<?php
+
+								$sql = "SELECT id, name FROM boards WHERE project_id = '{$proId}'";
+								$res = $con->query($sql);
+								if($res->num_rows > 0) {
+									while ($row = $res->fetch_assoc()) {
+									?>
+									<option value="<?= $row['id']; ?>"><?= $row['name']; ?></option>
+									<?php
+									}
+								}
+
+							?>
+						</select>
+					</span>
+				</div>
 				<div class="right">
 					<ul class="menu-h">
+
+						<li title="Due Date">&#128197;</li>
+						<li class="red" title="Delete">&#128686;</li>
+					<!--
 						<li>&#8285;</li>
+					-->
 					</ul>
 				</div>
 				<div class="clear"></div>
 			</div>
 			<div id="card-body" class="body"></div>
-			<div class="foot"></div>
+			<div class="foot">
+				<div class="newcmt">
+					<form>
+						<label>New Comment</label>
+						<textarea name="cmt"></textarea>
+					</form>
+				</div>
+				<div class="cmts">
+					<div class="cmt"></div>
+				</div>
+			</div>
 		</div>
 	</div>
 </body>

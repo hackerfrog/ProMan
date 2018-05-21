@@ -56,6 +56,27 @@ textarea {
 .text-center {
 	text-align: center;
 }
+.inline {
+	display: inline;
+}
+.block {
+	display: block;
+}
+.inline-block {
+	display: inline-block;
+}
+.flex {
+	display: flex;
+}
+.flex.row {
+	flex-direction: row;
+}
+.flex.column {
+	flex-direction: column;
+}
+.flex .center {
+	justify-content: center;
+}
 .relative {
 	position: relative;
 }
@@ -98,10 +119,9 @@ a.btn:hover, .btn:hover {
 	display: none;
 	position: absolute;
 	width: 100%;
-	height: calc(100% - 64px);
+	height: 100%;
 	background: rgba(0, 0, 0, 0.65);
 	top: 0;
-	padding: 32px 0;
 	color: #000000;
 	z-index: 200;
 }
@@ -122,7 +142,7 @@ a.btn:hover, .btn:hover {
 	background: #ffffff;
 	padding: 16px 32px;
 	width: 480px;
-	margin: 0 auto;
+	margin: 32px auto;
 	box-shadow: 0 0 16px #000000;
 }
 .model .box .head {
@@ -134,6 +154,12 @@ a.btn:hover, .btn:hover {
 }
 .model .box .body {
 	font-size: 13px;
+}
+.model .box .foot {
+	border-top: 1px solid #dddddd;
+	font-size: 13px;
+	padding: 16px;
+	margin: 16px -32px -16px;
 }
 .popup {
 	position: absolute;
