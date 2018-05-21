@@ -27,6 +27,8 @@ if (isset($_POST["register"])) {
 					$error = "Your email adress is already in use.";
 				} else {
 					$sql = "INSERT INTO users (fullname, password, email) VALUES ('{$name}', '{$password}', '{$email}')";
+					$con->query($sql);
+					header("location: " . $config['page']['login']);
 				}
 			} else {
 				header("location: " . $config['page']['oops']);
