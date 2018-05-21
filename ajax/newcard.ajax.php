@@ -10,6 +10,8 @@ if(isset($_POST['ajax-newcard'])) {
 	if (empty($_POST['projectId']) || empty($_POST['boardId']) || empty($_POST['title'])) {
 		$return['status'] = "error";
 		$return['message'] = "Card title can't be empty";
+		echo json_encode($return);
+		exit();
 	} else {
 		$projectId = $_POST['projectId'];
 		$boardId = $_POST['boardId'];
@@ -29,7 +31,7 @@ if(isset($_POST['ajax-newcard'])) {
 							$return['status'] = 'success';
 							$return['result'] = '
 							<div class="card">
-								<div class="title">' . $title . '</div>';
+								<div class="title"><a id="call-card-box" href="#">' . $title . '</a></div>';
 							if(!empty($body)) {
 								$return['result'] .= '<div class="body">' . $body . '</div>';
 							}

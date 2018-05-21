@@ -132,6 +132,9 @@ a.btn:hover, .btn:hover {
 	padding: 16px 0;
 	text-transform: uppercase;
 }
+.model .box .body {
+	font-size: 13px;
+}
 .popup {
 	position: absolute;
 	background: #ffffff;

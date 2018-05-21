@@ -73,4 +73,31 @@ $(function() {
 			
 		});
 	});
+	$('[id="call-card-box"]').click(function() {
+		$("#model-card-box").toggle();
+		cardId = $(this).find("#card-id").val();
+		$.ajax({
+			url: 'ajax/carddata.ajax.php',
+			type: 'POST',
+			data: 'cardId=' + cardId + '&ajax-carddata=data'
+		})
+		.done(function(data) {
+			obj = $.parseJSON(data);
+			if (obj.status == 'error') {
+				alert(obj.message);
+			} else {
+				console.log(obj);
+				model = $("#model-card-box");
+				model.find('#card-title .title').html(obj.data.title);
+				model.find('#card-body').html(obj.data.body);
+			}
+		})
+		.fail(function() {
+			console.log("error");
+		})
+		.always(function() {
+			console.log("complete");
+		});
+		
+	});
 });

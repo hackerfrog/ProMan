@@ -104,12 +104,20 @@ if($res = $con->query($sql)) {
 												?>
 													<div class="card">
 														<div class="title">
-															<a href="#"><?= $row['title']; ?></a>
+															<a id="call-card-box" href="#">
+																<?= $row['title']; ?>
+																<input id="card-id" type="hidden" value="<?= $row['id']; ?>">
+															</a>
+
 														</div>
 												<?php
 													if(!empty($row['body'])) {
 												?>
 														<div class="body"><?= $row['body']; ?></div>
+												<?php
+													} else {
+												?>
+														<div class="body empty"></div>
 												<?php
 													}
 												?>
@@ -220,6 +228,25 @@ if($res = $con->query($sql)) {
 					</div>
 				</form>
 			</div>
+		</div>
+	</div>
+	<div id="model-card-box" class="model">
+		<div id="model" class="box">
+			<div class="close"></div>
+			<div id="card-title" class="head">
+				<span class="title"></span>
+			</div>
+			<div class="card-detail">
+				<div class="left"></div>
+				<div class="right">
+					<ul class="menu-h">
+						<li>&#8285;</li>
+					</ul>
+				</div>
+				<div class="clear"></div>
+			</div>
+			<div id="card-body" class="body"></div>
+			<div class="foot"></div>
 		</div>
 	</div>
 </body>
