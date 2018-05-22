@@ -28,7 +28,8 @@ if (isset($_POST['ajax-newboard'])) {
 						<div id="call-newcard" class="newcard">
 							+
 							<input id="boardId" type="hidden" value="' . $boardId . '">
-							<input id="projectId" type="hidden" name="' . $proId . '">
+							<input id="projectId" type="hidden" value="' . $proId . '">
+							<input id="boardName" type="hidden" value="' . $name . '">
 						</div>
 						<div class="cards">
 							
