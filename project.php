@@ -75,9 +75,9 @@ if($res = $con->query($sql)) {
 				<div id="tab-activ" class="tab">Activity</div>
 			</div>
 		</div>
-		<div class="flex-right">
+		<div class="flex-right project-options">
 			<ul class="menu-h">
-				<li>
+				<li id="call-team-setting">
 					<i class="fas fa-user-friends"></i>
 				</li>
 			</ul>
@@ -108,8 +108,9 @@ if($res = $con->query($sql)) {
 										if($resCard = $con->query($sql)) {
 											if($resCard->num_rows > 0) {
 												while($row = $resCard->fetch_assoc()) {
+													$done = ($row['done']) ? ' done' : '';
 												?>
-													<div class="card">
+													<div class="card<?= $done; ?>">
 														<div class="title">
 															<a id="call-card-box" href="#">
 																<?= $row['title']; ?>
@@ -241,6 +242,9 @@ if($res = $con->query($sql)) {
 		<div id="model" class="box">
 			<div class="close"></div>
 			<div id="card-title" class="head">
+				<span id="call-card-done" class="check">
+					<i class="fas fa-check"></i>
+				</span>
 				<span class="title"></span>
 			</div>
 			<div class="card-detail">

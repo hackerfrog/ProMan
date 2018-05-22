@@ -54,6 +54,9 @@
 .projectbar .tab.selected {
 	box-shadow: inset 0 -3px #601ef2;
 }
+.projectbar .project-options li {
+	color: #152559;
+}
 .tab-area {
 	position: absolute;
 	width: 100%;
@@ -138,6 +141,10 @@
 	margin-bottom: 10px;
 	box-shadow: 2px 2px 0 #7645f6;
 }
+.board-box .board .cards .card.done .title,
+.board-box .board .cards .card.done .foot {
+	background: rgba(118, 69, 246, 0.2);
+}
 .board-box .board .cards .card .title {
 	padding: 4px 8px;
 	border-bottom: 1px solid #dddddd;
@@ -217,11 +224,23 @@
 .activ-box .activity a:hover {
 	color: #601ef2;
 }
+#model-card-box .box .head .check {
+	cursor: pointer;
+	position: absolute;
+	color: #dddddd;
+}
+#model-card-box .box .head .check:hover {
+	color: rgba(0, 230, 64, 0.2);
+}
+#model-card-box .box .head .check.done {
+	color: rgb(38, 166, 91);
+}
 #model-card-box .box .head .title {
 	overflow: hidden;
 	text-overflow: ellipsis;
 	white-space: nowrap;
 	display: block;
+	padding-left: 32px;
 }
 #model-card-box .box .body {
 	max-height: 320px;

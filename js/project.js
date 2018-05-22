@@ -37,7 +37,8 @@ $(function() {
 			
 		});
 	});
-	$('[id="call-newcard"]').click(function() {
+	$('#tabs-area #tab-board').on('click', '[id="call-newcard"]', function() {
+//	$('[id="call-newcard"]').click(function() {		// Old Call
 		$("#model-newcard").toggle();
 		board = $(this).parent();
 		boardId = $(this).find("#boardId").val();
@@ -73,9 +74,11 @@ $(function() {
 			
 		});
 	});
-	$('[id="call-card-box"]').click(function() {
+	$('[id="cards"]').on('click', '[id="call-card-box"]', function() {
+//	$('[id="call-card-box"]').click(function() {		// Old Call
 		$("#model-card-box").toggle();
 		cardId = $(this).find("#card-id").val();
+		card = $(this).parent().parent();
 		$.ajax({
 			url: 'ajax/carddata.ajax.php',
 			type: 'POST',
@@ -92,6 +95,11 @@ $(function() {
 				model.find('#card-body').html(obj.data.body);
 				model.find('#proName').html(obj.project.name);
 				model.find('#boardName select option[value=' + obj.board.id + ']').attr("selected", true);
+				tick = $("#call-card-done");
+				if(tick.hasClass('done') || obj.data.done == 0)
+					tick.removeClass('done')
+				else
+					tick.addClass('done');
 			}
 		})
 		.fail(function() {
@@ -117,6 +125,7 @@ $(function() {
 					alert(obj.message);
 				} else {
 					location.reload();
+					//TODO Remove JS reload and make change in live page.
 				}
 			})
 			.fail(function() {
@@ -126,5 +135,36 @@ $(function() {
 				console.log("complete");
 			});
 		});
+
+
+		$("#call-card-done").on('click', function() {
+			tick = $("#call-card-done");
+			$.ajax({
+				url: 'ajax/carddone.ajax.php',
+				type: 'POST',
+				data: 'cardId=' + cardId + '&ajax-carddone=done'
+			})
+			.done(function(data) {
+				obj = $.parseJSON(data);
+				if (obj.status == 'error') {
+					alert(obj.message);
+				} else {
+					if(tick.hasClass('done')) {
+						tick.removeClass('done');
+						card.removeClass('done');
+					} else {
+						tick.addClass('done');
+						card.addClass('done');
+					}
+				}
+			})
+			.fail(function() {
+				console.log("error");
+			})
+			.always(function() {
+				console.log("complete");
+			});
+		});
+
 	});
 });
