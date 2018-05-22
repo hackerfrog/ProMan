@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: May 20, 2018 at 04:54 AM
+-- Generation Time: May 22, 2018 at 05:01 AM
 -- Server version: 5.6.17
 -- PHP Version: 5.5.12
 
@@ -33,27 +33,8 @@ CREATE TABLE IF NOT EXISTS `activity` (
   `created_on` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `performed_by` int(10) unsigned NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=15 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
---
--- Dumping data for table `activity`
---
-
-INSERT INTO `activity` (`id`, `project_id`, `detail`, `created_on`, `performed_by`) VALUES
-(1, 1, 'Project created by <a id="user" href="profile.php?id=1"><i id="1"></i>Alfa Test Account</a>', '2018-05-19 16:55:19', 1),
-(2, 1, '<b>ToDo</b> board created by <a id="user" href="profile.php?id=1"><i id="1"></i>Alfa Test Account</a>', '2018-05-19 16:56:03', 1),
-(3, 1, '<b>Backlog</b> board created by <a id="user" href="profile.php?id=1"><i id="1"></i>Alfa Test Account</a>', '2018-05-19 17:08:32', 1),
-(4, 1, '<b>Progress</b> board created by <a id="user" href="profile.php?id=1"><i id="1"></i>Alfa Test Account</a>', '2018-05-19 17:22:54', 1),
-(5, 1, '<b>Done</b> board created by <a id="user" href="profile.php?id=1"><i id="1"></i>Alfa Test Account</a>', '2018-05-19 17:32:26', 1),
-(6, 1, '<b>Done</b> board created by <a id="user" href="profile.php?id=1"><i id="1"></i>Alfa Test Account</a>', '2018-05-19 17:32:26', 1),
-(7, 1, 'Card <b>#1</b> created under <b></b> by <a id="user" href="profile.php?id=1"><i id="1"></i>Alfa Test Account</a>', '2018-05-20 01:26:04', 1),
-(8, 1, 'Card <b>#2</b> created under <b>ToDo</b> by <a id="user" href="profile.php?id=1"><i id="1"></i>Alfa Test Account</a>', '2018-05-20 01:27:50', 1),
-(9, 1, 'Card <b>#3</b> created under <b>Backlog</b> by <a id="user" href="profile.php?id=1"><i id="1"></i>Alfa Test Account</a>', '2018-05-20 01:28:19', 1),
-(10, 1, 'Card <b>#4</b> created under <b>Backlog</b> by <a id="user" href="profile.php?id=1"><i id="1"></i>Alfa Test Account</a>', '2018-05-20 01:28:19', 1),
-(11, 1, 'Card <b>#5</b> created under <b>Progress</b> by <a id="user" href="profile.php?id=1"><i id="1"></i>Alfa Test Account</a>', '2018-05-20 01:31:56', 1),
-(12, 1, '<b>Progress</b> board created by <a id="user" href="profile.php?id=1"><i id="1"></i>Alfa Test Account</a>', '2018-05-20 01:48:15', 1),
-(13, 1, 'Card <b>#6</b> created under <b>Done</b> by <a id="user" href="profile.php?id=1"><i id="1"></i>Alfa Test Account</a>', '2018-05-20 01:53:15', 1),
-(14, 1, 'Card <b>#7</b> created under <b>Progress</b> by <a id="user" href="profile.php?id=1"><i id="1"></i>Alfa Test Account</a>', '2018-05-20 01:59:18', 1);
 
 -- --------------------------------------------------------
 
@@ -67,18 +48,7 @@ CREATE TABLE IF NOT EXISTS `boards` (
   `project_id` int(11) NOT NULL,
   `created_on` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=7 ;
-
---
--- Dumping data for table `boards`
---
-
-INSERT INTO `boards` (`id`, `name`, `project_id`, `created_on`) VALUES
-(1, 'ToDo', 1, '2018-05-19 16:56:02'),
-(2, 'Backlog', 1, '2018-05-19 17:08:31'),
-(3, 'Progress', 1, '2018-05-19 17:22:53'),
-(4, 'Done', 1, '2018-05-19 17:32:26'),
-(6, 'Progress', 1, '2018-05-20 01:48:14');
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
 
@@ -95,21 +65,9 @@ CREATE TABLE IF NOT EXISTS `cards` (
   `created_by` int(10) unsigned NOT NULL,
   `created_on` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `status` varchar(32) NOT NULL DEFAULT 'active',
+  `done` tinyint(1) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=8 ;
-
---
--- Dumping data for table `cards`
---
-
-INSERT INTO `cards` (`id`, `title`, `body`, `board_id`, `project_id`, `created_by`, `created_on`, `status`) VALUES
-(1, 'Test Card', 'Card', 1, 1, 1, '2018-05-20 01:26:04', 'active'),
-(2, 'Card 2', 'LOL', 1, 1, 1, '2018-05-20 01:27:50', 'active'),
-(3, 'Card 3', 'third card', 2, 1, 1, '2018-05-20 01:28:18', 'active'),
-(4, 'Card 3', 'third card', 2, 1, 1, '2018-05-20 01:28:19', 'active'),
-(5, 'Show cards on Board', 'Hello', 3, 1, 1, '2018-05-20 01:31:56', 'active'),
-(6, 'Boards', '', 4, 1, 1, '2018-05-20 01:53:15', 'active'),
-(7, 'This Long Long Title of a card lets see what happen to it.', '', 3, 1, 1, '2018-05-20 01:59:18', 'active');
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
 
@@ -126,14 +84,7 @@ CREATE TABLE IF NOT EXISTS `projects` (
   `type` varchar(8) NOT NULL DEFAULT 'pub',
   `team` text NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
-
---
--- Dumping data for table `projects`
---
-
-INSERT INTO `projects` (`id`, `name`, `detail`, `own`, `created_on`, `type`, `team`) VALUES
-(1, 'Test Project', 'Test', 1, '2018-05-19 16:55:19', 'pub', '["1"]');
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
 
@@ -147,7 +98,7 @@ CREATE TABLE IF NOT EXISTS `users` (
   `email` varchar(128) NOT NULL,
   `fullname` varchar(128) NOT NULL,
   `doj` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  `status` tinyint(4) NOT NULL DEFAULT '0',
+  `status` tinyint(4) NOT NULL DEFAULT '1',
   `hash` varchar(32) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
@@ -157,7 +108,7 @@ CREATE TABLE IF NOT EXISTS `users` (
 --
 
 INSERT INTO `users` (`id`, `password`, `email`, `fullname`, `doj`, `status`, `hash`) VALUES
-(1, 'pinpin', 'alfa@testrun.com', 'Alfa Test Account', '2018-05-08 17:23:32', 1, '6d7030606a532c46de3356b64e2a6823'),
+(1, 'pinpin', 'alfa@testrun.com', 'Alfa Test Account', '2018-05-08 17:23:32', 1, '82575add26fed278edbb59d388950a31'),
 (2, 'pinpin', 'beta@testrun.com', 'Beta Test Account', '2018-05-09 17:45:43', 1, 'd6e17297d00d8c71c8997599e94bb7aa');
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
