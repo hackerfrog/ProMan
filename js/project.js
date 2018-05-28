@@ -96,7 +96,7 @@ $(function() {
 				model.find('#proName').html(obj.project.name);
 				model.find('#boardName select option[value=' + obj.board.id + ']').attr("selected", true);
 				tick = $("#call-card-done");
-				if(tick.hasClass('done') || obj.data.done == 0)
+				if(obj.data.done == 0)
 					tick.removeClass('done')
 				else
 					tick.addClass('done');

@@ -71,7 +71,9 @@ if($res = $con->query($sql)) {
 			<div class="flex-row title"><?= $proData['name']; ?></div>
 			<div id="tabs" class="flex-row tabs">
 				<div id="tab-board" class="tab selected">Board</div>
+				<!--
 				<div id="tab-convo" class="tab">Conversation</div>
+				-->
 				<div id="tab-activ" class="tab">Activity</div>
 			</div>
 		</div>

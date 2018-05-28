@@ -63,13 +63,32 @@ if($data == false) {
 					if ($res = $con->query($sql)) {
 						if ($res->num_rows > 0) {
 							while ($row = $res->fetch_assoc()) {
+								$sql = "SELECT done, COUNT(*) AS num FROM cards WHERE project_id = '{$row['id']}' GROUP BY done";
+								$cOpen = 0;
+								$cClose = 0;
+								if($resCount = $con->query($sql)) {
+									if($resCount->num_rows == 2) {
+										$rowCount = $resCount->fetch_assoc();
+										$cOpen = $rowCount['num'];
+										$rowCount = $resCount->fetch_assoc();
+										$cClose = $rowCount['num'];
+									} elseif ($resCount->num_rows == 1) {
+										$rowCount = $resCount->fetch_assoc();
+										if ($rowCount['done'] == '1') {
+											$cClose = $rowCount['num'];
+										} else {
+											$cOpen = $rowCount['num'];
+										}
+									}
+									
+								}
 				?>
 					<div class="tile">
 						<a href="<?= $config['page']['project'] . '?project=' . $row['id']; ?>">
 							<div class="head"><?= $row['name']; ?></div>
 						</a>
 						<div class="body"><?= (empty($row['detail'])) ? 'No detail' : $row['detail']; ?></div>
-						<div class="foot text-right">Open - X &bull; Closed - X</div>
+						<div class="foot text-right">Open - <?= $cOpen; ?> &bull; Closed - <?= $cClose; ?></div>
 					</div>
 
 				<?php
